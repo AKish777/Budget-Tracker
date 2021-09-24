@@ -7,11 +7,11 @@ fetch("/api/transaction")
   })
   .then(data => {
     // save db data on global variable
-    transactions = data;
+    if(typeof data === 'Array') {transactions = data;
 
     populateTotal();
     populateTable();
-    populateChart();
+    populateChart();}
   });
 
 function populateTotal() {
